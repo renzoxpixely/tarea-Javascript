@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html";charset="utf-8"/>
+	<title>n2</title>
+</head>	
+<body>
+	<script>
+
+	function empleado(aingreso, categoriap, horast) {
+		var sueldo;
+		//para hallar fecha actual
+		var fecha = new Date();
+		var anio = fecha.getFullYear();
+
+		if(cpago=='A'){sueldo=50*horast;}
+		else if(cpago=='B'){sueldo=40*horast;}
+		else if(cpago=='C'){sueldo=30*horast;}
+
+		if(horast>=41){sueldo=sueldo+3*horast;}
+
+		if((anio-aingreso)>=5){sueldo=sueldo+250;}
+
+	   document.write("El sueldo es: "+ sueldo +"<br>");
+	}
+	
+
+	var ingreso,cpago,horastr;
+
+	ingreso=parseInt(prompt("Ingrese el año de ingreso "));
+	cpago=prompt("Ingrese la categoria de pago (A B C)");
+	horastr=parseInt(prompt("Ingrese la cantidad de horas trabajadas "));
+
+	empleado(ingreso,cpago,horastr)
+	
+</script>
+</body>
+</html>

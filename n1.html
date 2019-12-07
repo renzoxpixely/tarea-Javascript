@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html";charset="utf-8"/>
+	<title>n1</title>
+</head>	
+<body>
+	<script>
+	var minimo=20,snotas,promedio;	
+	nota = new Array(4);
+
+	nota[0]=parseInt(prompt("Ingrese nota 1 "));
+	nota[1]=parseInt(prompt("Ingrese nota 2 "));
+	nota[2]=parseInt(prompt("Ingrese nota 3 "));
+	nota[3]=parseInt(prompt("Ingrese nota 4 "));
+
+	//Hallando el numero menor
+	for(var i=0,len=nota.length;i<len;i++){
+    if(minimo > nota [i]){
+        minimo = nota [i];
+    	}
+    }
+
+    //sumando las notas y restando el minimo
+    snotas=nota[0]+nota[1]+nota[2]+nota[3]-minimo; 
+    //hallando el promedio
+    promedio=snotas/3;
+
+	document.write("El promedio de notas es: " + promedio+"<br>");
+	
+</script>
+</body>
+</html>

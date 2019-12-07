@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html";charset="utf-8"/>
+	<title>n3</title>
+</head>	
+<body>
+	<script>
+
+	function porcentaje(valores, valorestotales){
+	var porcentaje= (valores / valorestotales)*100;
+	var intPorcentaje = Math.round( porcentaje );
+	return intPorcentaje;
+	}
+
+	var n;
+	var total;
+
+	var edad,sexo,comprar;
+
+	var contedad=0,contcomprar=0,contse=0;
+
+	n=parseInt(prompt("Ingrese la cantidad de encuestados "));
+	total=n;
+	while(n>0){
+		edad=parseInt(prompt("¿Cual es su edad? "));
+		
+		sexo=prompt("Sexo: M o F");
+
+		comprar=prompt("¿Estaria dispuesto a comprar por internet? (SI/NO)");
+
+		//pregunta primer contador
+		if(comprar=='SI'){contcomprar++;}
+		//pregunta segundo contador
+		if(comprar=='SI' && edad<=35){contedad++;}
+		//pregunta tercer contador
+		if(comprar=='SI' && sexo=='M'){contse++;}
+	   n--;
+
+	}	
+	document.write("El porcentaje de SI y NO respectivamente es: "+ porcentaje(contcomprar,total)+"% "+porcentaje((total-contcomprar),total)+"% " +"<br>");
+	document.write("Personas que SI compraria porcentaje edad<=35: "+ porcentaje(contedad,contcomprar)+"% "+"<br>");
+	document.write("Personas que SI compraria porcentaje por sexo M Y F: "+ porcentaje(contse,contcomprar)+"% "+porcentaje((contcomprar-contse),contcomprar)+"% " +"<br>");
+</script>
+</body>
+</html>
